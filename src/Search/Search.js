@@ -6,6 +6,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      search: '',
       isLoading: false,
       listVisible: false,
       result: [],
@@ -13,57 +14,72 @@ class Search extends React.Component {
     };
   }
 
+  handelChange(e) {
+    this.setState({ search: e.target.value });
+  }
+
   ajaxCall(e) {
-    if (e.key === 'Enter' && e.target.value.length > 0) {
-      this.setState({ isLoading: true });
-      fetch(
-        `https://api.github.com/search/repositories?access_token=fe4eba558159f9674b9008a0cd8b57150674a9db&q=${e.target.value}`
-      )
-        .then(reponse => reponse.json())
-        .then(data => {
-          if (data.items.length > 0) {
-            this.setState({
-              result: data.items,
-              listVisible: true,
-              isLoading: false,
-              dataNotFound: false
-            });
-          } else {
-            this.setState({
-              result: [{ full_name: 'no repo found' }],
-              listVisible: true,
-              isLoading: false,
-              dataNotFound: true
-            });
-          }
-        });
-    }
+    e.preventDefault();
+    this.setState({ isLoading: true });
+    fetch(
+      `https://api.github.com/search/repositories?access_token=0c1b9b985b06e2834bea4768664e5ea8acaa9678&q=${this.state.search}`
+    )
+      .then(reponse => reponse.json())
+      .then(data => {
+        if (data.items.length > 0) {
+          this.setState({
+            result: data.items,
+            listVisible: true,
+            isLoading: false,
+            dataNotFound: false
+          });
+        } else {
+          this.setState({
+            result: [{ full_name: 'no repo found' }],
+            listVisible: true,
+            isLoading: false,
+            dataNotFound: true
+          });
+        }
+      });
   }
 
   closeList() {
     this.setState({ listVisible: false });
   }
 
+  updateFavoritesList() {
+    this.props.updateFavoritesListe();
+  }
+
   render() {
-    console.log(this.state.result);
+    const { search, listVisible, result, dataNotFound, isLoading } = this.state;
 
     return (
-      <div>
-        <div className='input__container'>
+      <div className='search'>
+        <form className='search__form' onSubmit={this.ajaxCall.bind(this)}>
+          <div className='search__input-section'>
+            <input
+              type='text'
+              className='search__input'
+              placeholder='search a repository'
+              onChange={this.handelChange.bind(this)}
+            />
+            {isLoading && <div className='loadind-icon'></div>}
+          </div>
           <input
-            type='text'
-            className='search'
-            placeholder='search a repository'
-            onKeyPress={this.ajaxCall.bind(this)}
+            type='submit'
+            className='search__submit'
+            value='SEARCH'
+            disabled={search.length === 0}
           />
-          {this.state.isLoading && <div className='loadind-icon'></div>}
-        </div>
-
+        </form>
         <RepoList
-          data={this.state.result}
-          isVisible={this.state.listVisible}
+          data={result}
+          isVisible={listVisible}
           closeList={this.closeList.bind(this)}
-          error={this.state.dataNotFound}
+          error={dataNotFound}
+          updateFavoritesList={this.updateFavoritesList.bind(this)}
         />
       </div>
     );

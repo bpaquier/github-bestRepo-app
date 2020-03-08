@@ -1,0 +1,59 @@
+.favorite-gestion {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  height: 54px;
+  display: flex;
+}
+
+.favorites-count {
+  height: 100%;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.favorites-count__star {
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+}
+
+.favorites-count__number {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.4em;
+}
+
+.favorites-list__button {
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 1.5em;
+  color: white;
+  border-radius: 0px 9px 9px 0px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 10px;
+  height: 10px;
+  border-bottom: 1px white solid;
+  border-right: 1px white solid;
+  transform: rotate(45deg);
+  margin-left: 10px;
+}
