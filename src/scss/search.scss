@@ -1,0 +1,80 @@
+.search {
+  max-width: 400px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 850px) {
+    margin-right: 10px;
+  }
+}
+
+.search__form {
+  display: flex;
+  align-items: center;
+}
+
+.search__input-section {
+  display: flex;
+  align-items: center;
+  border: 2px rgba(0, 0, 0, 0.2) solid;
+  border-radius: 10px 0px 0px 10px;
+  border-right: none;
+  height: 54px;
+}
+
+.search__input {
+  font-size: 1.5em;
+  outline: none;
+}
+
+.search__submit {
+  padding: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 1.1em;
+  cursor: pointer;
+  height: 54px;
+  width: 100px;
+
+  &:disabled {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: default;
+  }
+}
+
+.search__icon {
+  border-radius: 0px 10px 10px 0px;
+  width: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 54px;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  &.disabled {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: default;
+  }
+}
+
+.loadind-icon {
+  opacity: 0;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 4px double rgba(0, 0, 0, 0.2);
+  border-left: 4px solid rgba(0, 0, 0, 0.2);
+  animation: rotation infinite 1s linear;
+  margin-right: 10px;
+  &.is-loading {
+    opacity: 1;
+  }
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}

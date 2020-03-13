@@ -1,0 +1,81 @@
+.favorites {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  justify-content: flex-start;
+}
+
+.favorites__selection {
+  display: flex;
+  border-radius: 10px;
+  height: 54px;
+}
+
+.favorites__count {
+  height: 100%;
+  border-radius: 10px 0px 0px 10px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  padding: 0px 15px;
+}
+
+.count__star {
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+}
+
+.count__number {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.4em;
+}
+
+.favorites__button {
+  padding: 0px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 1.5em;
+  color: white;
+  cursor: pointer;
+  width: 150px;
+}
+
+.favorites__delete {
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 1.5em;
+  color: white;
+  border: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0px 9px 9px 0px;
+  cursor: pointer;
+  width: 100px;
+  cursor: pointer;
+}
+
+.favorites__delete:disabled {
+  opacity: 0.5;
+  cursor: default;
+}

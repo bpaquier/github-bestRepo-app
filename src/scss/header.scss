@@ -1,0 +1,17 @@
+header {
+  width: 100vw;
+  height: 50px;
+  background-color: rgb(36, 41, 46);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  background-image: url('../assets/github-logo-prints.png');
+  background-size: 100%;
+}

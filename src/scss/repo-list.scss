@@ -2,8 +2,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 410px;
   font-size: 1.3em;
+  box-sizing: border-box;
   border: 2px rgba(0, 0, 0, 0.2) solid;
   border-radius: 5px;
   margin-top: 5px;
@@ -26,33 +26,4 @@
 
 .list-search-result li span:hover {
   cursor: pointer;
-}
-
-.close-list {
-  position: fixed;
-  cursor: pointer;
-  margin-left: 385px;
-  margin-top: 5px;
-}
-
-.close-list:after {
-  display: block;
-  position: absolute;
-  top: 10px;
-  content: '';
-  width: 1em;
-  height: 2px;
-  background-color: rgba(0, 0, 0, 0.5);
-  transform: rotate(45deg);
-}
-
-.close-list:before {
-  display: block;
-  position: absolute;
-  top: 10px;
-  content: '';
-  width: 1em;
-  height: 2px;
-  background-color: rgba(0, 0, 0, 0.5);
-  transform: rotate(-45deg);
 }

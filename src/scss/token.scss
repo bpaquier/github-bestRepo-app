@@ -1,0 +1,39 @@
+.token {
+  margin-bottom: 20px;
+}
+
+.token__form {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.token__input {
+  font-size: 1.1em;
+  width: 300px;
+  height: 54px;
+  border: 2px rgba(0, 0, 0, 0.2) solid;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.token__submit {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 54px;
+  font-size: 1.5em;
+  border-radius: 0px 10px 10px 0px;
+  border: white;
+  cursor: pointer;
+  width: 60px;
+}
+
+.token__choosen p {
+  margin-top: 10px;
+  font-size: 0.8em;
+}
+
+.token__choosen p:first-child {
+  font-size: 1.4em;
+  color: rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,12 @@
+.icon {
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px white solid;
+  border-right: 2px white solid;
+  transform: rotate(45deg);
+  transition: transform 0.2s linear;
+}
+
+.icon.rotate {
+  transform: rotate(-135deg);
+}

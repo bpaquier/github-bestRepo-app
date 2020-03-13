@@ -1,0 +1,34 @@
+.favorites__list {
+  width: 100%;
+  font-size: 1.3em;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3em;
+  border: 2px rgba(0, 0, 0, 0.2) solid;
+  border-radius: 5px;
+  margin-top: 5px;
+  max-height: 300px;
+  overflow: scroll;
+
+  &--item {
+    padding: 20px 10px 20px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &--item input {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  &--item a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+
+  &--item a:hover {
+    text-decoration: underline;
+  }
+}

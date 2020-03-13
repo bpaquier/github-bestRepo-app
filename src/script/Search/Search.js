@@ -1,6 +1,6 @@
 import React from 'react';
-import RepoList from './repoList/RepoList';
-import './search.css';
+import RepoList from './RepoList';
+import ButtonIcon from '../global-elements/ButtonIcon';
 
 class Search extends React.Component {
   constructor(props) {
@@ -22,11 +22,11 @@ class Search extends React.Component {
     e.preventDefault();
     this.setState({ isLoading: true });
     fetch(
-      `https://api.github.com/search/repositories?access_token=0c1b9b985b06e2834bea4768664e5ea8acaa9678&q=${this.state.search}`
+      `https://api.github.com/search/repositories?access_token=${this.props.token}&q=${this.state.search}`
     )
       .then(reponse => reponse.json())
       .then(data => {
-        if (data.items.length > 0) {
+        if (data.items && data.items.length > 0) {
           this.setState({
             result: data.items,
             listVisible: true,
@@ -49,7 +49,7 @@ class Search extends React.Component {
   }
 
   updateFavoritesList() {
-    this.props.updateFavoritesListe();
+    this.props.updateFavoritesList();
   }
 
   render() {
@@ -62,19 +62,29 @@ class Search extends React.Component {
             <input
               type='text'
               className='search__input'
-              placeholder='search a repository'
+              placeholder='Recherchez un repo'
               onChange={this.handelChange.bind(this)}
             />
-            {isLoading && <div className='loadind-icon'></div>}
+            <div
+              className={`loadind-icon ${isLoading ? 'is-loading' : ''}`}
+            ></div>
           </div>
+
           <input
-            type='submit'
             className='search__submit'
+            type='submit'
             value='SEARCH'
             disabled={search.length === 0}
           />
+          <div
+            className={`search__icon ${search.length === 0 ? 'disabled' : ''}`}
+            onClick={this.closeList.bind(this)}
+          >
+            <ButtonIcon listVisible={listVisible} />
+          </div>
         </form>
         <RepoList
+          token={this.props.token}
           data={result}
           isVisible={listVisible}
           closeList={this.closeList.bind(this)}

@@ -1,11 +1,10 @@
 import React from 'react';
 
-import './repo-list.css';
-
 class RepoList extends React.Component {
   addToFavorites(e) {
+    console.log(this.props.token);
     fetch(
-      `https://api.github.com/user/starred/${e.target.innerHTML}?access_token=0c1b9b985b06e2834bea4768664e5ea8acaa9678`,
+      `https://api.github.com/user/starred/${e.target.innerHTML}?access_token=${this.props.token}`,
       {
         method: 'PUT'
       }
@@ -19,10 +18,12 @@ class RepoList extends React.Component {
           this.props.isVisible ? '' : 'hidden'
         } ${this.props.error ? 'error' : ''}`}
       >
-        <div className='close-list' onClick={() => this.props.closeList()} />
         {this.props.data.map((element, index) => (
           <li key={index}>
-            <span onClick={this.addToFavorites.bind(this)}>
+            <span
+              onClick={this.addToFavorites.bind(this)}
+              title='Ajoutez aux favoris'
+            >
               {element.full_name}
             </span>
           </li>
