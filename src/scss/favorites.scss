@@ -64,11 +64,11 @@
   display: flex;
   align-items: center;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: $main-color;
   font-size: 1.5em;
   color: white;
   border: none;
-  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  border-left: 1px solid $main-color;
   border-radius: 0px 9px 9px 0px;
   cursor: pointer;
   width: 100px;

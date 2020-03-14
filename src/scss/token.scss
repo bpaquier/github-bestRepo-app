@@ -13,13 +13,13 @@
   font-size: 1.1em;
   width: 300px;
   height: 54px;
-  border: 2px rgba(0, 0, 0, 0.2) solid;
+  border: 2px $main-color solid;
   border-radius: 10px 0px 0px 10px;
 }
 
 .token__submit {
   color: white;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: $main-color;
   height: 54px;
   font-size: 1.5em;
   border-radius: 0px 10px 10px 0px;

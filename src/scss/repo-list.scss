@@ -4,7 +4,7 @@
   flex-direction: column;
   font-size: 1.3em;
   box-sizing: border-box;
-  border: 2px rgba(0, 0, 0, 0.2) solid;
+  border: 2px $main-color solid;
   border-radius: 5px;
   margin-top: 5px;
   max-height: 300px;
@@ -21,7 +21,7 @@
 
 .list-search-result li {
   padding: 20px 0px 20px 10px;
-  border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
+  border-bottom: 1px $main-color;
 }
 
 .list-search-result li span:hover {
