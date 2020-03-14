@@ -1,5 +1,4 @@
 .search {
-  max-width: 400px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -23,8 +22,11 @@
   }
 
   &__input {
-    font-size: 1.5em;
+    font-size: 1em;
     outline: none;
+    @media (min-width: 850px) {
+      font-size: 1.1em;
+    }
   }
 
   &__submit {
@@ -32,6 +34,8 @@
     color: white;
     background-color: $main-color;
     font-size: 1.1em;
+    -webkit-appearance: none;
+    border-radius: 0;
     cursor: pointer;
     height: 54px;
     width: 100px;

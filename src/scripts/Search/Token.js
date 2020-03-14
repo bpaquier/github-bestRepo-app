@@ -22,7 +22,7 @@ class Token extends React.Component {
   }
 
   render() {
-    const { isVisible, actualContent } = this.state;
+    const { isVisible, actualContent, content } = this.state;
     return (
       <div className='token'>
         <form className='token__form' onSubmit={this.handelSubmit.bind(this)}>
@@ -32,7 +32,12 @@ class Token extends React.Component {
             placeholder='Entrez votre token'
             onChange={this.handelChange.bind(this)}
           />
-          <input className='token__submit' type='submit' value='Ok' />
+          <input
+            className='token__submit'
+            type='submit'
+            value='Ok'
+            disabled={content.length === 0}
+          />
         </form>
         {isVisible && (
           <div className='token__choosen'>

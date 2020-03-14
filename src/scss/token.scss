@@ -10,11 +10,16 @@
 }
 
 .token__input {
-  font-size: 1.1em;
-  width: 300px;
+  font-size: 1em;
   height: 54px;
   border: 2px $main-color solid;
+  border-right: none;
+  -webkit-appearance: none;
   border-radius: 10px 0px 0px 10px;
+  @media (min-width: 850px) {
+    font-size: 1.1em;
+    width: 300px;
+  }
 }
 
 .token__submit {
@@ -22,10 +27,15 @@
   background-color: $main-color;
   height: 54px;
   font-size: 1.5em;
+  -webkit-appearance: none;
   border-radius: 0px 10px 10px 0px;
   border: white;
   cursor: pointer;
   width: 60px;
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }
 
 .token__choosen p {
