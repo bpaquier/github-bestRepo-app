@@ -19,10 +19,10 @@ class App extends React.Component {
       `https://api.github.com/user/starred?access_token=${this.state.token}&bust=`
     )
       .then(reponse => {
+        console.log(reponse.status);
         return reponse.json();
       })
       .then(data => {
-        console.log(data);
         this.setState({ favoriteList: data });
       });
   }

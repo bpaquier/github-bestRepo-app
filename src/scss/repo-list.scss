@@ -1,9 +1,10 @@
 .list-search-result {
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   font-size: 1.3em;
-  box-sizing: border-box;
+
   border: 2px $main-color solid;
   border-radius: 5px;
   margin-top: 5px;

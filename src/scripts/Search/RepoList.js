@@ -8,7 +8,9 @@ class RepoList extends React.Component {
       {
         method: 'PUT'
       }
-    ).then(() => this.props.updateFavoritesList());
+    )
+      .then(reponse => console.log(reponse.status))
+      .then(() => this.props.updateFavoritesList());
   }
 
   render() {

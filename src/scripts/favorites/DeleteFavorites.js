@@ -5,7 +5,6 @@ class DeleteFavorites extends React.Component {
     document
       .querySelectorAll('.favorites__list--item input:checked')
       .forEach(element => {
-        console.log(element);
         fetch(
           `https://api.github.com/user/starred/${element.id}?access_token=${this.props.token}`,
           {

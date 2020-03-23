@@ -24,7 +24,10 @@ class Search extends React.Component {
     fetch(
       `https://api.github.com/search/repositories?access_token=${this.props.token}&q=${this.state.search}`
     )
-      .then(reponse => reponse.json())
+      .then(reponse => {
+        console.log(reponse.status);
+        return reponse.json();
+      })
       .then(data => {
         if (data.items && data.items.length > 0) {
           this.setState({
