@@ -17,7 +17,7 @@
 }
 
 .list-search-result.error {
-  background-color: rgba(255, 0, 0, 0.1);
+  background-color: $error-color-background;
 }
 
 .list-search-result li {

@@ -4,9 +4,7 @@ class Token extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      content: '',
-      actualContent: '',
-      isVisible: false
+      content: ''
     };
   }
 
@@ -22,7 +20,8 @@ class Token extends React.Component {
   }
 
   render() {
-    const { isVisible, actualContent, content } = this.state;
+    const { content } = this.state;
+    const { previousToken, isTokenValid } = this.props;
     return (
       <div className='token'>
         <form className='token__form' onSubmit={this.handelSubmit.bind(this)}>
@@ -31,6 +30,7 @@ class Token extends React.Component {
             type='text'
             placeholder='Entrez votre token'
             onChange={this.handelChange.bind(this)}
+            required
           />
           <input
             className='token__submit'
@@ -39,10 +39,15 @@ class Token extends React.Component {
             disabled={content.length === 0}
           />
         </form>
-        {isVisible && (
+        {isTokenValid && (
           <div className='token__choosen'>
-            <p>Token saisi: </p>
-            <p>{actualContent}</p>
+            <p>Votre token: </p>
+            <p>{previousToken}</p>
+          </div>
+        )}
+        {!isTokenValid && (
+          <div className='token__wrong'>
+            <p>Entrez un token valide</p>
           </div>
         )}
       </div>

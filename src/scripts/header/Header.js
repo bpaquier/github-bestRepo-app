@@ -8,9 +8,9 @@ export default () => (
         <a
           href='https://github.com/settings/tokens'
           target='blank'
-          title='Generate a token'
+          title='Générer un token'
         >
-          Generate your token
+          Générer un token
         </a>
       </p>
       <p>Git Stars Gestion</p>

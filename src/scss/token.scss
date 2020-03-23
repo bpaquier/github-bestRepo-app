@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .token__input {
@@ -46,4 +47,17 @@
 .token__choosen p:first-child {
   font-size: 1.4em;
   color: rgba(0, 0, 0, 0.5);
+}
+
+.token__wrong {
+  width: 70%;
+  height: 60px;
+  background-color: $error-color-background;
+  border-radius: 5px;
+  border: 2px $main-color solid;
+
+  p {
+    padding: 20px 0px 20px 10px;
+    font-size: 1.3em;
+  }
 }
